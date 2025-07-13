@@ -1,119 +1,128 @@
-# 🛡️ DEVSECOPS-CI-CD-DEMO
+<h1 align="center">
+  ⚙️ DevSecOps CI/CD Pipeline for Tic Tac Toe Game 🎮
+</h1>
 
-> **Secure, Scalable Delivery for Modern Web Excellence**
-
-![TypeScript](https://img.shields.io/badge/TypeScript-88.7%25-blue) ![Languages](https://img.shields.io/github/languages/count/NORTEX0030/devsecops-ci-cd-demo) ![Last Commit](https://img.shields.io/github/last-commit/NORTEX0030/devsecops-ci-cd-demo)
-
-Built with the tools and technologies:
-
-![JSON](https://img.shields.io/badge/-JSON-black?logo=json&logoColor=white)
-![Markdown](https://img.shields.io/badge/-Markdown-000000?logo=markdown)
-![npm](https://img.shields.io/badge/-npm-CB3837?logo=npm)
-![PostCSS](https://img.shields.io/badge/-PostCSS-DD3A0A?logo=postcss)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![Vitest](https://img.shields.io/badge/-Vitest-6E9F18?logo=vitest)
-![React](https://img.shields.io/badge/-React-61DAFB?logo=react)
-![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript)
-![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=githubactions)
-![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite)
-![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint)
-![YAML](https://img.shields.io/badge/-YAML-000000?logo=yaml)
+<p align="center">
+  <img src="https://img.shields.io/github/deployments/NORTEX0030/devsecops-ci-cd-demo/github-pages?label=Deployment&logo=github&style=flat-square" />
+  <img src="https://img.shields.io/github/workflow/status/NORTEX0030/devsecops-ci-cd-demo/CI/CD%20Pipeline/main?logo=githubactions&style=flat-square" />
+  <img src="https://img.shields.io/github/issues/NORTEX0030/devsecops-ci-cd-demo?style=flat-square" />
+  <img src="https://img.shields.io/github/stars/NORTEX0030/devsecops-ci-cd-demo?style=social" />
+</p>
 
 ---
 
-## 📚 Table of Contents
+###  🔄 DevSecOps CI/CD Pipeline Workflow (Horizontal View)
+```bash
+[ Developer Pushes Code ]
+            │
+            ▼
+[ GitHub Actions Triggered ]
+            │
+            ▼
+[ Unit Testing (npm test) ]
+            │
+            ▼
+[ Linting (ESLint) ]
+            │
+            ▼
+[ Build App (npm run build) ]
+            │
+            ▼
+[ Docker Build & Push to GHCR ]
+            │
+            ▼
+[ Trivy Security Scan ]
+            │
+            ▼
+[ Update Kubernetes Deployment ]
+```
 
-- [Overview](#overview)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Features](#features)
+### 🎮 Project Overview
+
+This is a fully responsive **Tic Tac Toe game** built using modern web technologies and enhanced with a **DevSecOps CI/CD Pipeline** using:
+
+- GitHub Actions
+- Docker
+- Kubernetes
+- Trivy (Security Scan)
+- GHCR (GitHub Container Registry)
 
 ---
 
-## 📖 Overview
+### 🧩 Features
 
-**devsecops-ci-cd-demo** is an end-to-end developer toolset that demonstrates automated CI/CD workflows, containerized deployment, and modern frontend architecture for scalable web applications.
-
-It integrates best practices in DevSecOps, ensuring **secure**, **reliable**, and **efficient** delivery within Kubernetes environments.
-
-### 🔥 Why this project?
-
-- ⚙️ **Automated CI/CD Pipelines** – Seamless testing, security scanning, and deployment
-- ☸️ **Kubernetes Orchestration** – Scalable deployments with YAML manifests
-- ⚛️ **Modern Stack** – React, Vite, Tailwind, TypeScript
-- 🔐 **DevSecOps Focus** – Security tools & quality gates
-- 🐳 **Containerization** – Dockerized application for consistent builds
+- 🧠 **Smart game logic** with turn-based play
+- ✅ **Highlights winning combinations**
+- 📊 **Score tracking** for Player X, O, and Draws
+- 📜 **Game history** with timestamps
+- 🔁 **Reset functionality** for both game & scores
+- 📱 **Fully responsive** and mobile-friendly
 
 ---
 
-## 🚀 Getting Started
+### 🚀 Technologies Used
 
-### 🔧 Prerequisites
-
-This project requires the following:
-
-- **Programming Language:** TypeScript
-- **Package Manager:** npm or yarn
-- **Container Runtime:** Docker
+- ⚛️ React 18
+- ⌨️ TypeScript
+- 🎨 Tailwind CSS
+- 🧩 Lucide Icons
+- 🔐 GitHub Actions + Trivy for CI/CD & Security
+- 🐳 Docker + Kubernetes + GHCR
 
 ---
 
-### 📦 Installation
+### 📁 Project Structure
 
-#### Clone the repository:
-
-```bash
-git clone https://github.com/NORTEX0030/devsecops-ci-cd-demo.git
-cd devsecops-ci-cd-demo
-```
-
-### Install dependencies:
-
-
-1) Using Docker:
-```bash
-docker build -t NORTEX0030/devsecops-ci-cd-demo .
-```
-
-2) Using npm:
-```bash
-npm install
-```
-
-### 🧪 Run Locally
-```bash
-npm run dev
-# or
-yarn dev
-```
-Open your browser and visit: http://localhost:5173
-
-### 🗂️ Project Structure
 ```bash
 src/
 ├── components/
-│   ├── Board.tsx
-│   ├── Square.tsx
-│   ├── ScoreBoard.tsx
-│   └── GameHistory.tsx
+│   ├── Board.tsx        # Game board
+│   ├── Square.tsx       # Each square
+│   ├── ScoreBoard.tsx   # Score tracker
+│   └── GameHistory.tsx  # Game logs
 ├── utils/
-│   └── gameLogic.ts
-├── App.tsx
-└── main.tsx
+│   └── gameLogic.ts     # Game logic
+├── App.tsx              # Root component
+└── main.tsx             # Entry point
+ ```
+
+### 🧠 Game Logic
+- X always starts first
+
+- Players take turns placing marks
+
+- The first with 3 in a row (horizontal, vertical, diagonal) wins
+
+- If the board is full and no winner → Draw
+
+- Winning line is visually highlighted
+
+
+###  🛠️ Getting Started
+✅ Prerequisites
+```bash
+Node.js (v14+)
+
+npm or yarn
+ ```
+
+ 🔧 Installation
+```bash
+ git clone https://github.com/NORTEX0030/devsecops-ci-cd-demo.git
+cd devsecops-ci-cd-demo
+
+npm install   # or yarn
+ ```
+
+ 🚀 Run Locally
+```bash
+ npm run dev   # or yarn dev
 ```
 
-### ✨ Features
-🎮 Functional Tic Tac Toe Game
+Visit: http://localhost:5173
 
-🧠 Clean React + TypeScript structure
-
-📊 Score & history tracking
-
-🧪 Unit-tested logic
-
-📱 Responsive design
-
-🔐 Integrated DevSecOps: CI/CD, Docker, Kubernetes
+📦 Production Build
+```bash
+npm run build   # or yarn build
+```
+The output will be in the dist/ directory.
