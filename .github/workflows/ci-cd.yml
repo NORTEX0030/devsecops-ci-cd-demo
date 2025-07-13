@@ -112,13 +112,14 @@ jobs:
             type=ref,event=branch
             latest
       
-      - name: Build Docker image
+      - name: Build and Push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ghcr.io/nortex003/devsecops-ci-cd-demo:sha-${{ github.sha }}
-                ghcr.io/nortex003/devsecops-ci-cd-demo:latest
+          tags: |
+            ghcr.io/nortex003/devsecops-ci-cd-demo:sha-${{ github.sha }}
+            ghcr.io/nortex003/devsecops-ci-cd-demo:latest
           labels: ${{ steps.meta.outputs.labels }}
           load: true
       
