@@ -79,7 +79,7 @@ jobs:
     needs: [build]
     env:
       REGISTRY: ghcr.io
-      IMAGE_NAME: nortex003/devsecops-ci-cd-demo
+      IMAGE_NAME: nortex0030/devsecops-ci-cd-demo
     outputs:
       image_tag: ${{ steps.set_output.outputs.image_tag }}
     steps:
@@ -118,8 +118,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/nortex003/devsecops-ci-cd-demo:sha-${{ github.sha }}
-            ghcr.io/nortex003/devsecops-ci-cd-demo:latest
+            ghcr.io/nortex0030/devsecops-ci-cd-demo:sha-${{ github.sha }}
+            ghcr.io/nortex0030/devsecops-ci-cd-demo:latest
           labels: ${{ steps.meta.outputs.labels }}
           load: true
       
